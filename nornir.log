@@ -1,0 +1,65 @@
+2020-04-30 17:31:35,972 -  nornir.core -     INFO -        run() - Running task 'netmiko_file_transfer' with args {'source_file': 'test_xfer.txt', 'dest_file': 'test_xfer.txt', 'direction': 'put'} on 1 hosts
+2020-04-30 17:31:46,824 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/nornir/plugins/tasks/networking/netmiko_file_transfer.py", line 28, in netmiko_file_transfer
+    net_connect, source_file=source_file, dest_file=dest_file, **kwargs
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_functions.py", line 76, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 291, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/cisco/cisco_nxos_ssh.py", line 54, in __init__
+    self.source_md5 = self.file_md5(source_file)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_handler.py", line 284, in file_md5
+    with open(file_name, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'test_xfer.txt'
+
+2020-04-30 17:32:17,187 -  nornir.core -     INFO -        run() - Running task 'netmiko_file_transfer' with args {'source_file': 'test_xfer.txt', 'dest_file': 'test_xfer.txt', 'direction': 'put'} on 1 hosts
+2020-04-30 17:32:36,374 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/nornir/plugins/tasks/networking/netmiko_file_transfer.py", line 28, in netmiko_file_transfer
+    net_connect, source_file=source_file, dest_file=dest_file, **kwargs
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_functions.py", line 103, in file_transfer
+    verifyspace_and_transferfile(scp_transfer)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_functions.py", line 17, in verifyspace_and_transferfile
+    scp_transfer.transfer_file()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_handler.py", line 336, in transfer_file
+    self.put_file()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_handler.py", line 349, in put_file
+    self.scp_conn.scp_transfer_file(self.source_file, destination)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_handler.py", line 41, in scp_transfer_file
+    self.scp_client.put(source_file, dest_file)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/scp.py", line 158, in put
+    self._recv_confirm()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/scp.py", line 370, in _recv_confirm
+    raise SCPException('Invalid response from server', msg)
+scp.SCPException: ('Invalid response from server', b'Secure copy: Access Denied\n')
+
+2020-04-30 17:34:31,781 -  nornir.core -     INFO -        run() - Running task 'netmiko_file_transfer' with args {'source_file': 'test_xfer.txt', 'dest_file': 'test_xfer.txt', 'direction': 'put'} on 1 hosts
+2020-04-30 17:34:49,872 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/nornir/plugins/tasks/networking/netmiko_file_transfer.py", line 28, in netmiko_file_transfer
+    net_connect, source_file=source_file, dest_file=dest_file, **kwargs
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_functions.py", line 103, in file_transfer
+    verifyspace_and_transferfile(scp_transfer)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_functions.py", line 17, in verifyspace_and_transferfile
+    scp_transfer.transfer_file()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_handler.py", line 336, in transfer_file
+    self.put_file()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_handler.py", line 349, in put_file
+    self.scp_conn.scp_transfer_file(self.source_file, destination)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/netmiko/scp_handler.py", line 41, in scp_transfer_file
+    self.scp_client.put(source_file, dest_file)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/scp.py", line 158, in put
+    self._recv_confirm()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/scp.py", line 370, in _recv_confirm
+    raise SCPException('Invalid response from server', msg)
+scp.SCPException: ('Invalid response from server', b'Secure copy: Access Denied\n')
+
+2020-04-30 18:02:15,828 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int brief'} on 1 hosts
+2020-04-30 18:03:12,281 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh version'} on 1 hosts

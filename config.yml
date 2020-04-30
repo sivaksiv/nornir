@@ -1,0 +1,8 @@
+core:
+  num_workers: 100
+inventory:
+  plugin: "nornir.plugins.inventory.simple.SimpleInventory"
+  options: 
+    host_file: "/Users/Sivakumar/PycharmProjects/My_projects/nornir/hosts.yml"
+    group_file: "/Users/Sivakumar/PycharmProjects/My_projects/nornir/groups.yml"
+    defaults_file: "/Users/Sivakumar/PycharmProjects/My_projects/nornir/defaults.yml"

@@ -1,0 +1,4 @@
+nxos:
+  platform: 'cisco_nxos'
+  data:
+    img: 'test_nxos.txt'
